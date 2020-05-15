@@ -124,7 +124,7 @@ def run(filename):
             for knob in frames[frame]:
                 symbols[knob][1] = frames[frame][knob]
         for command in commands:
-            print(command)
+            #print(command)
             c = command['op']
             args = command['args']
             knob_value = 1
@@ -203,5 +203,6 @@ def run(filename):
             save_extension(screen, 'anim/' + name + '%03d'%frame)
             frame += 1
         if len(frames) > 1:
+            print("making animation")
             make_animation(name)
             # end operation loop
