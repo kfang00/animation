@@ -61,7 +61,7 @@ def second_pass( commands, num_frames ):
         c = command['op']
         args = command['args']
         if c == 'vary':
-            hold = args[0]
+            hold = int(args[0])
             while hold <= args[1]:
               h = (args[3] - args[2])/(args[1] - args[0])
               if h > 0:
