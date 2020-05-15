@@ -61,13 +61,12 @@ def second_pass( commands, num_frames ):
         c = command['op']
         args = command['args']
         if c == 'vary':
+            start = args[2]
             hold = int(args[0])
             while hold <= args[1]:
               h = (args[3] - args[2])/(args[1] - args[0])
-              if h > 0:
-                  frames[hold][command['knob']] = h * hold
-              else:
-                  frames[hold][command['knob']] = h * (args[1] - hold)
+              frames[hold][command['knob']] = start
+              start += h
               hold += 1
     return frames
 
