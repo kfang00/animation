@@ -119,7 +119,7 @@ def run(filename):
         consts = ''
         coords = []
         coords1 = []
-
+        print("Saving Frame:" + str(frame))
         if len(frames) > 1:
             for knob in frames[frame]:
                 symbols[knob][1] = frames[frame][knob]
