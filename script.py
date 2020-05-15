@@ -108,6 +108,7 @@ def run(filename):
     frames = second_pass(commands, num_frames)
     frame = 0
     while frame < len(frames):
+        print("Saving Frame:" + str(frame))
         tmp = new_matrix()
         ident( tmp )
 
@@ -119,7 +120,6 @@ def run(filename):
         consts = ''
         coords = []
         coords1 = []
-        print("Saving Frame:" + str(frame))
         if len(frames) > 1:
             for knob in frames[frame]:
                 symbols[knob][1] = frames[frame][knob]
@@ -200,9 +200,9 @@ def run(filename):
             elif c == 'save':
                 if len(frames) == 1:
                     save_extension(screen, args[0])
-            save_extension(screen, 'anim/' + name + '%03d'%frame)
+            save_extension(screen, 'anim/' + name + '%03d'%frame+ '.png')
             frame += 1
         if len(frames) > 1:
-            print("making animation")
+            #print("making animation")
             make_animation(name)
             # end operation loop
