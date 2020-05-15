@@ -28,7 +28,7 @@ def first_pass( commands ):
         args = command['args']
         if c == 'frames':
             fr = True
-            num_frames = args[0]
+            num_frames = int(args[0])
         elif c == 'basename':
             base = True
             name = args[0]
@@ -38,7 +38,7 @@ def first_pass( commands ):
         sys.exit();
     if (fr == True) and (base != True):
         print("frames is found, but basename is not.  Using anim as default")
-    return (name, num_frames)
+    return (name, int(num_frames))
 
 """======== second_pass( commands ) ==========
   In order to set the knobs for animation, we need to keep
