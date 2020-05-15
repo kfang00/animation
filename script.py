@@ -56,41 +56,20 @@ def first_pass( commands ):
   ===================="""
 def second_pass( commands, num_frames ):
     frames = [ {} for i in range(num_frames) ]
-
     for command in commands:
+        #print(command)
         c = command['op']
         args = command['args']
-
         if c == 'vary':
-            kname = command['knob']
-            fr0 = int(args[0])
-            frE = args[1]
-            s = args[2]
-            e = args[3]
-            i = (e - s) / (frE - fr0)
-            val = s
-            while(fr0 <= frE):
-                frames[fr0][kname] = val
-                val += i
-                fr0 += 1
-
-
+            hold = args[0]
+            while hold <= args[1]:
+              h = (args[3] - agrs[2])/(args[1] - args[0])
+              if h > 0:
+                  frames[hold][command['knob']] = h * hold
+              else:
+                  frames[hold][command['knob']] = h * (args[1] - hold)
+              hold += 1
     return frames
-    # frames = [ {} for i in range(num_frames) ]
-    # for command in commands:
-    #     #print(command)
-    #     c = command['op']
-    #     args = command['args']
-    #     if c == 'vary':
-    #         hold = args[1]
-    #         while hold <= args[2]:
-    #           h = (args[4] - agrs[3])/(args[2] - args[1])
-    #           if h > 0:
-    #               frames[hold][args[0]] = h * hold
-    #           else:
-    #               frames[hold][args[0]] = h * (args[2] - hold)
-    #           hold += 1
-    # return frames
 
 
 def run(filename):
@@ -222,8 +201,7 @@ def run(filename):
                 if len(frames) == 1:
                     save_extension(screen, args[0])
             save_extension(screen, 'anim/' + name + '%03d'%frame+ '.png')
-            frame += 1
-        if len(frames) > 1:
-            #print("making animation")
-            make_animation(name)
-            # end operation loop
+        frame += 1
+    if len(frames) > 1:
+        #print("making animation")
+        make_animation(name)
