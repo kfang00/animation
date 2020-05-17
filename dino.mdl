@@ -1,5 +1,5 @@
-frames 30
-basename dino_30
+frames 40
+basename dino_40
 constants white 1 1 1 1 1 1 1 1 1
 push
 move 0 60 0
@@ -61,27 +61,27 @@ box 0 0 0 44 4 30
 push
 move 6 -4 0
 box 0 0 0 32 4 30
+pop
+pop
+pop
+pop
+pop
+pop
+pop
+pop
+pop
+pop
+pop
+pop
 push
-move 3 -4 0 
+move 46 79 0 
 move 0 10 0 lleg
-box 0 0 0 5 15 30
+box 0 0 0 5 17 30
 pop
 push
-move 22 0 0 
+move 68 79 0 
 move 0 10 0 rleg
-box 0 0 0 5 15 30
-pop
-pop
-pop
-pop
-pop
-pop
-pop
-pop
-pop
-pop
-pop
-pop
+box 0 0 0 5 17 30
 pop
 push
 move 500 60 0 
@@ -101,7 +101,7 @@ box 0 0 0 15 10 30
 push
 move 7 0 0
 box 0 0 0 8 -30 30
-vary rlegs 0 29 0 1
-vary llegs 0 29 1 0
-vary cactus 0 29 0 1
+vary rlegs 0 39 0 1
+vary llegs 0 39 1 0
+vary cactus 0 39 0 1
 display
