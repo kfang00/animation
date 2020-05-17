@@ -65,8 +65,10 @@ push
 move 3 -4 0 
 move 0 10 0 lleg
 box 0 0 0 5 15 30
+pop
 push
-move 19 0 0 
+move 22 0 0 
+move 0 10 0 rleg
 box 0 0 0 5 15 30
 pop
 pop
@@ -81,10 +83,9 @@ pop
 pop
 pop
 pop
-pop
 push
-move 370 60 0 
-move -130 0 0 cactus
+move 500 60 0 
+move -370 0 0 cactus
 box 0 0 0 10 -80 30
 push
 move -15 30 0
@@ -101,6 +102,6 @@ push
 move 7 0 0
 box 0 0 0 8 -30 30
 vary rlegs 0 29 0 1
-vary llegs 0 29 0 1
+vary llegs 0 29 1 0
 vary cactus 0 29 0 1
 display
